@@ -7,36 +7,145 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calculator</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="calculator.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <div class="container">
+
+            <div class="jumbotron">
+                <h1 class="text-center font-weight-bold">Online Calculator</h1>
+                <h3 class="text-center">Chose one of the skills below</h3>
+            </div>
+
+            <div class="row p-3">
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/PickandPlace.png" class="pic">
+                        <div class="caption text-center font-weight-bold">Pick and Place</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/BinPicking.png" class="pic">
+                        <div class="caption text-center font-weight-bold">Bin Picking</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/Assembly.png" class="pic">
+                        <div class="caption text-center font-weight-bold">Assembly</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/Restocking.png" class="pic">
+                        <div class="caption text-center font-weight-bold">Restocking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-            <div class="skills">
-                <p>Available skills</p>
-                <a href="img/PickandPlace.svg"></a>
-                <a href="img/Assembly.svg"></a>
-                <a href="img/BinPicking.svg"></a>
-                <a href="img/Restocking.svg"></a>
-            </div>
-            
-            <div class="movement">
-                <p>Do you need movement?</p>
-                <button>Yes</button>              
-                <button>No</button>
+            <div class="container p-3">
+                <h4 class="text-center">Do you need it to be mobile?</h4>
+                <div class="row justify-content-center p-1">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-success btn-block">Yes</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-danger btn-block">No</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="calc-move">
+        <form>
+            <div class="container p-3">
+                <div class="row justify-content-center">
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="dis">Distance:</label>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      M
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">M</a>
+                                      <a class="dropdown-item" href="#">Feet</a>
+                                    </div>
+                                </div>
+                            <input type="text" class="form-control" id="dis">
+                        </div>
+                    </div>
 
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="dis">Object Size:</label>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      CM
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">CM</a>
+                                      <a class="dropdown-item" href="#">Inch</a>
+                                    </div>
+                                </div>
+                            <input type="text" class="form-control" id="dis">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="dis">Weight:</label>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Kg
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Kg</a>
+                                      <a class="dropdown-item" href="#">lbs</a>
+                                    </div>
+                                </div>
+                            <input type="text" class="form-control" id="dis">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="dis">Batch Size:</label>
+                            <input type="text" class="form-control" id="dis">
+                        </div>
+                    </div>                    
+                </div>
             </div>
 
-            <div class="calc-nomove">
 
+            <div class="container text-center">
+                <H5>Optional</H5>
+                
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 form-group text-center">
+                        <label for="dis">Hourly Labor Cost</label>
+                        <input type="text" class="form-control" id="dis">
+                    </div>
+
+                    <div class="col-sm-3 form-group text-center">
+                        <label for="dis">Operator Cycle Time Per Hour</label>
+                        <input type="text" class="form-control" id="dis">
+                    </div>
+                </div>
             </div>
+        </form>
+
+        <div class="container p-2 col-sm-4">
+            <button type="button" class="btn btn-success btn-block font-weight-bold">Calculate</button>
+        </div>
+
         <script src="" async defer></script>
     </body>
 </html>
