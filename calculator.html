@@ -8,10 +8,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calculator</title>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="main.js"></script>
     </head>
     <body>
         <div class="container">
@@ -52,24 +55,24 @@
             </div>
         </div>
         
-            <div class="container p-3">
-                <h4 class="text-center">Do you need it to be mobile?</h4>
-                <div class="row justify-content-center p-1">
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-success btn-block">Yes</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-danger btn-block">No</button>
-                    </div>
-                </div>
-            </div>
+		<div class="container p-3">
+			<h4 class="text-center">Do you need it to be mobile?</h4>
+			<div class="row justify-content-center p-1">
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-success btn-block">Yes</button>
+				</div>
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-danger btn-block">No</button>
+				</div>
+			</div>
+		</div>
 
         <form>
             <div class="container p-3">
                 <div class="row justify-content-center">
                     <div class="col-sm-3">
                         <div class="form-group text-center">
-                            <label for="dis">Distance:</label>
+                            <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Distance:</label>
                                 <div class="dropdown d-inline-block">
                                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       M
@@ -79,13 +82,13 @@
                                       <a class="dropdown-item" href="#">Feet</a>
                                     </div>
                                 </div>
-                            <input type="text" class="form-control" id="dis">
+                            <input type="text"  placeholder="Distance from Pick to Place" class="form-control" id="dis">
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="form-group text-center">
-                            <label for="dis">Object Size:</label>
+                            <label for="obj"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Object Size:</label>
                                 <div class="dropdown d-inline-block">
                                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       CM
@@ -94,14 +97,24 @@
                                       <a class="dropdown-item" href="#">CM</a>
                                       <a class="dropdown-item" href="#">Inch</a>
                                     </div>
-                                </div>
-                            <input type="text" class="form-control" id="dis">
+								</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<input type="text" placeholder="W" class="form-control" id="obj">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" placeholder="H" class="form-control" id="obj">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" placeholder="L" class="form-control" id="obj">
+								</div>
+							</div>
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="form-group text-center">
-                            <label for="dis">Weight:</label>
+                            <label for="wei"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Weight:</label>
                                 <div class="dropdown d-inline-block">
                                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Kg
@@ -111,14 +124,14 @@
                                       <a class="dropdown-item" href="#">lbs</a>
                                     </div>
                                 </div>
-                            <input type="text" class="form-control" id="dis">
+                            <input type="text" placeholder="Weight of a Single Object" class="form-control" id="wei">
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="form-group text-center">
-                            <label for="dis">Batch Size:</label>
-                            <input type="text" class="form-control" id="dis">
+                            <label for="bat"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Batch Size:</label>
+                            <input type="text" placeholder="Average Run Size of Parts" class="form-control" id="bat">
                         </div>
                     </div>                    
                 </div>
@@ -130,21 +143,26 @@
                 
                 <div class="row justify-content-center">
                     <div class="col-sm-3 form-group text-center">
-                        <label for="dis">Hourly Labor Cost</label>
-                        <input type="text" class="form-control" id="dis">
+                        <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Hourly Labor Cost</label>
+                        <input type="text" placeholder="Average for 1 Employee" class="form-control" id="dis">
                     </div>
 
                     <div class="col-sm-3 form-group text-center">
-                        <label for="dis">Operator Cycle Time Per Hour</label>
-                        <input type="text" class="form-control" id="dis">
+                        <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Operator Cycle Time Per Hour</label>
+                        <input type="text" placeholder="Parts pper hour for 1 Operator" class="form-control" id="dis">
                     </div>
                 </div>
             </div>
         </form>
+		
 
-        <div class="container p-2 col-sm-4">
-            <button type="button" class="btn btn-success btn-block font-weight-bold">Calculate</button>
-        </div>
+		<div class="container p-2">
+			<div class="row justify-content-center">
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-success btn-block">Calculate</button>
+				</div>
+			</div>
+		</div>
 
         <script src="" async defer></script>
     </body>
