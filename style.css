@@ -27,3 +27,20 @@ body {
     -o-transition: opacity .15s linear;
     transition: opacity .15s linear;
 }
+
+#mobile {
+    display: none;
+}
+
+#PickandPlaceMobile {
+    display: none;
+}
+
+#PickandPlaceStationary {
+    display: none;
+}
+
+
+#evil {
+    display: none;
+}

@@ -27,7 +27,7 @@
             <div class="row p-3">
                 <div class="col-sm-3">
                     <div class="thumbnail">
-                        <img src="img/PickandPlace.png" class="pic">
+                        <img src="img/PickandPlace.png" class="pic" onclick="test1()">
                         <div class="caption text-center font-weight-bold">Pick and Place</div>
                     </div>
                 </div>
@@ -55,24 +55,25 @@
             </div>
         </div>
         
-		<div class="container p-3">
+		<div class="container p-3" id="mobile">
 			<h4 class="text-center">Do you need it to be mobile?</h4>
 			<div class="row justify-content-center p-1">
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-success btn-block">Yes</button>
+					<button type="button" class="btn btn-success btn-block" onclick="yes()">Yes</button>
 				</div>
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-danger btn-block">No</button>
+					<button type="button" class="btn btn-danger btn-block" onclick="no()">No</button>
 				</div>
 			</div>
 		</div>
 
-        <form>
+        <form id="PickandPlaceMobile">
             <div class="container p-3">
                 <div class="row justify-content-center">
-                    <div class="col-sm-3">
+
+                    <div class="col-sm-3" id="dis">
                         <div class="form-group text-center">
-                            <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Distance:</label>
+                            <label for="wei"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Distance</label>
                                 <div class="dropdown d-inline-block">
                                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       M
@@ -82,7 +83,7 @@
                                       <a class="dropdown-item" href="#">Feet</a>
                                     </div>
                                 </div>
-                            <input type="text"  placeholder="Distance from Pick to Place" class="form-control" id="dis">
+                            <input type="text" placeholder="Distance from pick to place" class="form-control" id="wei">
                         </div>
                     </div>
 
@@ -149,22 +150,121 @@
 
                     <div class="col-sm-3 form-group text-center">
                         <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Operator Cycle Time Per Hour</label>
-                        <input type="text" placeholder="Parts pper hour for 1 Operator" class="form-control" id="dis">
+                        <input type="text" placeholder="Parts per hour for 1 Operator" class="form-control" id="dis">
+                    </div>
+
+                    <div class="col-sm-3 form-group text-center">
+                        <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Are operating from 9 AM to 5 PM"></i> Daily Operating Hours</label>
+                        <input type="text" placeholder="Are you operating from 9 AM to 5 PM" class="form-control" id="dis">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container p-2">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-success btn-block" onclick="calc()">Calculate</button>
                     </div>
                 </div>
             </div>
+    
+
+        </form>
+
+        <form id="PickandPlaceStationary">
+            <div class="container p-3">
+                <div class="row justify-content-center">
+
+
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="obj"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Object Size:</label>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      CM
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">CM</a>
+                                      <a class="dropdown-item" href="#">Inch</a>
+                                    </div>
+								</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<input type="text" placeholder="W" class="form-control" id="obj">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" placeholder="H" class="form-control" id="obj">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" placeholder="L" class="form-control" id="obj">
+								</div>
+							</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="wei"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Weight:</label>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Kg
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Kg</a>
+                                      <a class="dropdown-item" href="#">lbs</a>
+                                    </div>
+                                </div>
+                            <input type="text" placeholder="Weight of a Single Object" class="form-control" id="wei">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group text-center">
+                            <label for="bat"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Batch Size:</label>
+                            <input type="text" placeholder="Average Run Size of Parts" class="form-control" id="bat">
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+
+            <div class="container text-center">
+                <H5>Optional</H5>
+                
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 form-group text-center">
+                        <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="This should be the hourly wage plus benefits for an avereage operator to accuratly calculate ROI"></i> Hourly Labor Cost</label>
+                        <input type="text" placeholder="Average for 1 Employee" class="form-control" id="dis">
+                    </div>
+
+                    <div class="col-sm-3 form-group text-center">
+                        <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Distance between where objects are picked and then placed. "></i> Operator Cycle Time Per Hour</label>
+                        <input type="text" placeholder="Parts per hour for 1 Operator" class="form-control" id="dis">
+                    </div>
+
+                    <div class="col-sm-3 form-group text-center">
+                            <label for="dis"><i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Are operating from 9 AM to 5 PM"></i> Daily Operating Hours</label>
+                            <input type="text" placeholder="Are you operating from 9 AM to 5 PM" class="form-control" id="dis">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container p-2">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-success btn-block" onclick="calc()">Calculate</button>
+                    </div>
+                </div>
+            </div>
+    
+
         </form>
 		
 
-		<div class="container p-2">
-			<div class="row justify-content-center">
-				<div class="col-sm-4">
-					<button type="button" class="btn btn-success btn-block">Calculate</button>
-				</div>
-			</div>
-		</div>
 
-		<div class="container p-2">
+		<div class="container p-2" id="evil">
 			<div class="row justify-content-center">
 				<div class="col-sm-6">
 					<div class="thumbnail">
