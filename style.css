@@ -14,7 +14,7 @@ body {
 
 .pic:hover {
     transform: scale(1.02);
-    box-shadow: 0px 0px 10px gray
+    box-shadow: 0px 0px 10px gray;
 }
 
 .caption {
@@ -32,14 +32,13 @@ body {
     display: none;
 }
 
-#PickandPlaceMobile {
+#PickandPlace {
     display: none;
 }
 
-#PickandPlaceStationary {
+#BinPicking {
     display: none;
 }
-
 
 #evil {
     display: none;

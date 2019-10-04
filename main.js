@@ -3,61 +3,45 @@ $(document).ready(function(){
     });
 });
 
-function test1() {
-    var x = document.getElementById("mobile");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+function pick() {
+    document.getElementById("mobile").style.display = "block";
+    document.getElementById("bin").style.opacity = ".5";
+    document.getElementById("ass").style.opacity = ".5";
+    document.getElementById("res").style.opacity = ".5";
+    document.getElementById("pick").style.opacity = "1";
+    document.getElementsById("BinPicking").style.display = "none";
 }
 
+function bin() {
+    document.getElementById("mobile").style.display = "block";
+    document.getElementById("bin").style.opacity = "1";
+    document.getElementById("ass").style.opacity = ".5";
+    document.getElementById("res").style.opacity = ".5";
+    document.getElementById("pick").style.opacity = ".5";
+}
 
 function yes() {
-    var x = document.getElementById("PickandPlaceMobile");
-    document.getElementById("dis");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
+
+    if (document.getElementById("pick").style.opacity = "1"){
+        document.getElementById("PickandPlace").style.display = "block";
     }
+    if (document.getElementById("bin").style.opacity = "1"){
+        document.getElementById("PickandPlace").style.display = "block";
+    }
+    document.getElementById("dis").style.display = "block";
+    document.getElementById("evil").style.display = "none";
+    document.getElementById("no").style.opacity = ".5";
+    document.getElementById("yes").style.opacity = "1";
 }
 
 function no() {
-    var x = document.getElementById("PickandPlaceMobile");
-    document.getElementById("dis").remove();
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+    document.getElementById("PickandPlace").style.display = "block"
+    document.getElementById("dis").style.display = "none";
+    document.getElementById("evil").style.display = "none";
+    document.getElementById("yes").style.opacity = ".5";
+    document.getElementById("no").style.opacity = "1";
 }
 
-// function yes() {
-//     var x = document.getElementById("PickandPlaceMobile");
-//     document.getElementById("PickandPlaceStationary").style.display = "none";
-//     if (x.style.display === "block") {
-//         x.style.display = "none";
-//     } else {
-//         x.style.display = "block";
-//     }
-// }
-
-// function no() {
-//     var x = document.getElementById("PickandPlaceStationary");
-//     document.getElementById("PickandPlaceMobile").style.display = "none";
-//     if (x.style.display === "block") {
-//         x.style.display = "none";
-//     } else {
-//         x.style.display = "block";
-//     }
-// }
-
 function calc() {
-    var x = document.getElementById("evil");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+    document.getElementById("evil").style.display = "block";
 }
