@@ -32,13 +32,13 @@ body {
     display: none;
 }
 
-#PickandPlace {
+#Calc {
     display: none;
 }
 
-#BinPicking {
+/* #BinPicking {
     display: none;
-}
+} */
 
 #evil {
     display: none;

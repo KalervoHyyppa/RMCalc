@@ -15,7 +15,9 @@ $(document).ready(function(){
 
 function pick() {
     document.getElementById("mobile").style.display = "block";
-    document.getElementById("BinPicking").style.display = "none";
+    // document.getElementById("BinPicking").style.display = "none";
+    jQuery(".BinPicking").hide();
+    jQuery("#Calc").hide();
     document.getElementById("evil").style.display = "none";
 
     document.getElementById("bin").style.opacity = ".5";
@@ -28,7 +30,9 @@ function pick() {
 
 function bin() {
     document.getElementById("mobile").style.display = "block";
-    document.getElementById("PickandPlace").style.display = "none";
+    // document.getElementById("PickandPlace").style.display = "none";
+    jQuery(".PickandPlace").hide();
+    jQuery("#Calc").hide();
     document.getElementById("evil").style.display = "none";
 
     document.getElementById("bin").style.opacity = "1";
@@ -42,12 +46,14 @@ function bin() {
 function yes() {
 
     if (document.getElementById("pick").style.opacity === "1"){
-        document.getElementById("PickandPlace").style.display = "block";
+        document.getElementById("Calc").style.display = "block";
         document.getElementById("dis").style.display = "block"
+        jQuery(".PickandPlace").show();
     }
     else if (document.getElementById("bin").style.opacity === "1"){
-        document.getElementById("BinPicking").style.display = "block";
-        document.getElementById("disBin").style.display = "block"
+        document.getElementById("Calc").style.display = "block";
+        document.getElementById("dis").style.display = "block"
+        jQuery(".BinPicking").show();
     }
     document.getElementById("dis").style.display = "block";
     document.getElementById("evil").style.display = "none";
@@ -63,12 +69,14 @@ function no() {
 
 
     if (document.getElementById("pick").style.opacity === "1"){
-        document.getElementById("PickandPlace").style.display = "block";
+        document.getElementById("Calc").style.display = "block";
         document.getElementById("dis").style.display = "none";
+        jQuery(".PickandPlace").show();
     }
     else if (document.getElementById("bin").style.opacity === "1"){
-        document.getElementById("BinPicking").style.display = "block";
-        document.getElementById("disBin").style.display = "none";
+        document.getElementById("Calc").style.display = "block";
+        document.getElementById("dis").style.display = "none";
+        jQuery(".BinPicking").show();
     }
 }
 
