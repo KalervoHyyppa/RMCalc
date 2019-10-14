@@ -19,6 +19,7 @@ function pick() {
     jQuery(".BinPicking").hide();
     jQuery("#Calc").hide();
     document.getElementById("evil").style.display = "none";
+    document.getElementById("Calc").reset();
 
     document.getElementById("bin").style.opacity = ".5";
     document.getElementById("ass").style.opacity = ".5";
@@ -33,6 +34,7 @@ function bin() {
     // document.getElementById("PickandPlace").style.display = "none";
     jQuery(".PickandPlace").hide();
     jQuery("#Calc").hide();
+    document.getElementById("Calc").reset();
     document.getElementById("evil").style.display = "none";
 
     document.getElementById("bin").style.opacity = "1";
@@ -82,4 +84,17 @@ function no() {
 
 function calc() {
     document.getElementById("evil").style.display = "block";
+    var d = document.getElementById("disCalc").value;
+    var w = document.getElementById("weiCalc").value;
+    var b = document.getElementById("batCalc").value;
+    var wi = document.getElementById("widCalc").value;
+    var h = document.getElementById("heiCalc").value;
+    var l = document.getElementById("lenCalc").value;
+    var ho = document.getElementById("houCalc").value;
+    var o = document.getElementById("opeCalc").value;
+    var da = document.getElementById("daiCalc").value;
+
+    var sum = d + w + b + wi + h + l + ho + o + da;
+    console.log(sum)
+
 }
