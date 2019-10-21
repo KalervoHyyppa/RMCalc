@@ -83,6 +83,13 @@ function no() {
 }
 
 function calc() {
+
+    var visClass = document.getElementsByClassName("valid").style.display === "block";
+    // for loop that validates the answers in each form that is visible
+    for (i = 0; i<visClass.length; i++) {
+
+    }
+
     document.getElementById("evil").style.display = "block";
     var d = document.getElementById("disCalc").value;
     var w = document.getElementById("weiCalc").value;
