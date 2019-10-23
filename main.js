@@ -92,16 +92,25 @@ function calc() {
     var visInput = document.getElementsByClassName("visInput");
     // for loop that validates the answers in each form that is visible
     console.log(visClass.length);
-    for (i = 0; i<visClass.length; i++) {
-        console.log(visClass[i].getElementsByTagName('input').value);
-        if (visClass[i].style.display === "block") {
-            console.log(i + " is a visible");
-            // BreaK if number
+    for (i = 0; i<visInput.length; i++) {
+        console.log(visInput[i].value);
+        if (visInput[i].offsetParent === null) {
+            console.log(i + " is not visible");
+            // Ignore if not visible
         }
         else {
-            console.log(i + " is not a number");
+            console.log(i + " is visible");
+            if (isNaN(visInput[i].value)) {
+                alert("Must be numbers");
+            }
+            if (document.getElementById("weiCalc").value > 10) {
+                alert("She's to fat!");
+                console.log("she big")
+                break
+            }
         }
     }
+
 
     document.getElementById("evil").style.display = "block";
     var d = document.getElementById("disCalc").value;
