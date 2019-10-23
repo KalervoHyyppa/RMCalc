@@ -47,6 +47,12 @@ function bin() {
 
 function yes() {
 
+    document.getElementById("dis").style.display = "block";
+    document.getElementById("evil").style.display = "none";
+    document.getElementById("no").style.opacity = ".5";
+    document.getElementById("yes").style.opacity = "1";
+    document.getElementById("Calc").reset();
+
     if (document.getElementById("pick").style.opacity === "1"){
         document.getElementById("Calc").style.display = "block";
         document.getElementById("dis").style.display = "block"
@@ -57,10 +63,7 @@ function yes() {
         document.getElementById("dis").style.display = "block"
         jQuery(".BinPicking").show();
     }
-    document.getElementById("dis").style.display = "block";
-    document.getElementById("evil").style.display = "none";
-    document.getElementById("no").style.opacity = ".5";
-    document.getElementById("yes").style.opacity = "1";
+
 }
 
 function no() {
@@ -68,6 +71,7 @@ function no() {
     document.getElementById("evil").style.display = "none";
     document.getElementById("yes").style.opacity = ".5";
     document.getElementById("no").style.opacity = "1";
+    document.getElementById("Calc").reset();
 
 
     if (document.getElementById("pick").style.opacity === "1"){
@@ -84,10 +88,19 @@ function no() {
 
 function calc() {
 
-    var visClass = document.getElementsByClassName("valid").style.display === "block";
+    var visClass = document.getElementsByClassName("valid");
+    var visInput = document.getElementsByClassName("visInput");
     // for loop that validates the answers in each form that is visible
+    console.log(visClass.length);
     for (i = 0; i<visClass.length; i++) {
-
+        console.log(visClass[i].getElementsByTagName('input').value);
+        if (visClass[i].style.display === "block") {
+            console.log(i + " is a visible");
+            // BreaK if number
+        }
+        else {
+            console.log(i + " is not a number");
+        }
     }
 
     document.getElementById("evil").style.display = "block";
@@ -102,6 +115,6 @@ function calc() {
     var da = document.getElementById("daiCalc").value;
 
     var sum = d + w + b + wi + h + l + ho + o + da;
-    console.log(sum)
+    console.log(sum);
 
 }

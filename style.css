@@ -41,3 +41,7 @@ body {
 #evil {
     display: none;
 }
+
+.jumbotron {
+    height: 10%;
+}
