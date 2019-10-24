@@ -90,6 +90,9 @@ function calc() {
 
     var visClass = document.getElementsByClassName("valid");
     var visInput = document.getElementsByClassName("visInput");
+    var error = [];
+    var formVal = true;
+
     // for loop that validates the answers in each form that is visible
     console.log(visClass.length);
     for (i = 0; i<visInput.length; i++) {
@@ -101,16 +104,36 @@ function calc() {
         else {
             console.log(i + " is visible");
             if (isNaN(visInput[i].value)) {
-                alert("Must be numbers");
+                error.push(i);
+                formVal = false;
             }
-            if (document.getElementById("weiCalc").value > 10) {
-                alert("She's to fat!");
-                console.log("she big")
-                break
+            if (visInput[i].value == null || visInput[i].value == "") {
+                error.push(i);
+                formVal = false;
             }
         }
     }
+    console.log(error);
+    console.log(error);
+    console.log(formVal);
 
+    if (formVal == true) {
+        if (visInput[4].value > 10) {
+            alert("She's to fat!");
+            console.log("she big");
+            formVal = false;
+            error.push(4);
+        }
+    
+        if (Math.min(visInput[1].value, visInput[2].value, visInput[3].value) > 10) {
+            alert("Object to large");
+            formVal = false;
+            error.push(Math.min(visInput[1].value, visInput[2].value, visInput[3].value));
+        }
+    }
+
+    console.log(formVal);
+    console.log(error);
 
     document.getElementById("evil").style.display = "block";
     var d = document.getElementById("disCalc").value;
