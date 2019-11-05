@@ -90,7 +90,7 @@ function calc() {
 
     var visClass = document.getElementsByClassName("valid");
     var visInput = document.getElementsByClassName("visInput");
-    var error = [];
+    var error = []; //an array of the inputs that aren't valid
     var formVal = true;
 
     // for loop that validates the answers in each form that is visible
@@ -114,10 +114,11 @@ function calc() {
         }
     }
     console.log(error);
-    console.log(error);
-    console.log(formVal);
+    console.log(formVal + " formval");
 
     if (formVal == true) {
+
+        //If the weight of the object is greater than the limit of the gripper
         if (visInput[4].value > 10) {
             alert("She's to fat!");
             console.log("she big");
@@ -125,6 +126,7 @@ function calc() {
             error.push(4);
         }
     
+        //If the size of the object is greater than the limit of the gripper
         if (Math.min(visInput[1].value, visInput[2].value, visInput[3].value) > 10) {
             alert("Object to large");
             formVal = false;
@@ -132,21 +134,29 @@ function calc() {
         }
     }
 
+    if (formVal == false) {
+        for (i = 0; i<error.length; i++) {
+            visInput[error].style.borderColor = "red";
+        }
+    }
+
+    //If the form is valid after all the checks then calculate the final value cost
+    if (formVal == true) {
+        document.getElementById("evil").style.display = "block";
+        var d = document.getElementById("disCalc").value;
+        var w = document.getElementById("weiCalc").value;
+        var b = document.getElementById("batCalc").value;
+        var wi = document.getElementById("widCalc").value;
+        var h = document.getElementById("heiCalc").value;
+        var l = document.getElementById("lenCalc").value;
+        var ho = document.getElementById("houCalc").value;
+        var o = document.getElementById("opeCalc").value;
+        var da = document.getElementById("daiCalc").value;
+    
+        var sum = d + w + b + wi + h + l + ho + o + da;
+        console.log(sum);
+    }
     console.log(formVal);
     console.log(error);
-
-    document.getElementById("evil").style.display = "block";
-    var d = document.getElementById("disCalc").value;
-    var w = document.getElementById("weiCalc").value;
-    var b = document.getElementById("batCalc").value;
-    var wi = document.getElementById("widCalc").value;
-    var h = document.getElementById("heiCalc").value;
-    var l = document.getElementById("lenCalc").value;
-    var ho = document.getElementById("houCalc").value;
-    var o = document.getElementById("opeCalc").value;
-    var da = document.getElementById("daiCalc").value;
-
-    var sum = d + w + b + wi + h + l + ho + o + da;
-    console.log(sum);
 
 }
