@@ -96,6 +96,9 @@ function calc() {
     // for loop that validates the answers in each form that is visible
     console.log(visClass.length);
     for (i = 0; i<visInput.length; i++) {
+
+        visInput[i].style.borderColor = "";
+
         console.log(visInput[i].value);
         if (visInput[i].offsetParent === null) {
             console.log(i + " is not visible");
@@ -130,13 +133,15 @@ function calc() {
         if (Math.min(visInput[1].value, visInput[2].value, visInput[3].value) > 10) {
             alert("Object to large");
             formVal = false;
-            error.push(Math.min(visInput[1].value, visInput[2].value, visInput[3].value));
+            error.push(1, 2, 3);
         }
     }
 
     if (formVal == false) {
         for (i = 0; i<error.length; i++) {
-            visInput[error].style.borderColor = "red";
+            var x = error[i];
+            console.log(x + " this is x")
+            visInput[x].style.borderColor = "red";
         }
     }
 
